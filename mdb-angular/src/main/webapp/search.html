@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="./js/angular.min.js"></script>
+<script src="./js/controllers/search.js"></script>
+</head>
+<body ng-app="film" ng-controller="SearchController">
+	<form>
+		<input ng-model="searchTerm"> </input>
+		<button ng-click="maj()">clic</button>
+	</form>
+
+
+	<ul>
+		<li ng-repeat="film in resp.results">
+			<img ng-alt="{{film.title}}" ng-src="{{srcImg(film.poster_path)}}" height="45px"></img>
+		<!-- srcImg(film.poster_path) -->
+		{{film.title}} 
+		<br>
+		<button on-click="{{detail(film.id)}}">details</button>
+		</li>
+
+	</ul>
+</body>
+</html>

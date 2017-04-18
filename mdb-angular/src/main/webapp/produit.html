@@ -1,0 +1,72 @@
+
+<div class="container" ng-controller="achatsCtrl as achatsCtrl">
+	<h2>Tous les produits</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Nom</th>
+			<th>Description</th>
+			<th>Disponible</th>
+			<th>Prix</th>
+			<th></th>
+			<th>Quantité voulue</th>
+		</tr>
+
+
+		<tr ng-repeat="produit in produitCtrl.produits">
+			<td>{{produit.id}}</td>
+			<td>{{produit.nom}}</td>
+			<td>{{produit.description}}</td>
+			<td>{{produit.stock!=0}}</td>
+			<td>{{produit.prix | currency}}</td>
+			<td><a class="btn btn-info btn-xs"
+				ng-click="achatsCtrl.ajouteLigne(produit)">Acheter</a></td>
+			<td><input type="number" ng-model=achatsCtrl.qteSelect /></td>
+
+		</tr>
+		</table>
+		<table class="table table-striped" legend="Dernier ajout">
+			<tr>
+			<td>Id : {{achatsCtrl.ligne.id}}</td>
+			<td>Produit : {{achatsCtrl.ligne.produit.nom}}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+			<td colspan="6"><a class="btn btn-info"
+				ng-click="produitCtrl.voirPanier()">Voir mon panier</a></td>
+		</tr>
+		<td colspan="6"><a class="btn btn-info"
+			ng-click="achatsCtrl.contenuPanier()">Actualiser mon panier</a></td>
+		</tr>
+
+	</table>
+
+	<table class="table table-striped" ng-show=produitCtrl.panierVisible>
+		<tr>
+			<th>Produit</th>
+			<th>Quantité</th>
+			<th>Prix Unitaire</th>
+			<th>Prix ligne</th>
+			<th></th>
+		</tr>
+
+		<tr ng-repeat="article in achatsCtrl.articlesCommandes">
+			<td>{{article.produit.nom}}</td>
+			<td>{{article.quantite}}</td>
+			<td>{{article.produit.prix | currency}}</td>
+			<td>{{article.quantite * article.produit.prix }}</td>
+			<td>
+				<a class="btn btn-info btn-xs" ng-click="achatsCtrl.validePanier()" ng-show="achatsCtrl.panier.etat==Etat.panier">
+				Valider le panier
+				</a> 
+			</td>
+		</tr>
+
+	</table>
+
+</div>
+

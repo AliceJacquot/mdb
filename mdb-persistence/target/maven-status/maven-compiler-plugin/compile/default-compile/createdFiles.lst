@@ -1,0 +1,11 @@
+mdb\metier\dao\impl\FilmDaoJpa.class
+mdb\metier\model\Produit.class
+mdb\metier\model\Views$ProdextPublic.class
+mdb\metier\model\Views$Public.class
+mdb\metier\dao\FilmDao.class
+mdb\metier\model\Views.class
+mdb\metier\model\Views$ExtendedPublic.class
+mdb\metier\dao\Dao.class
+mdb\metier\dao\impl\ProduitDaoJpa.class
+mdb\metier\model\Film.class
+mdb\metier\dao\ProduitDao.class

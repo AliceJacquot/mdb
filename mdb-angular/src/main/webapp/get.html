@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="./js/angular.min.js"></script>
+	</head>
+	<body ng-app="MonApplication" ng-controller="UserController">
+        
+		{{resp.title}} --
+		<span ng-repeat="g in resp.genres">{{g.name}}</span>
+         
+       
+        <script>
+            function UserController($scope, $http)
+            {
+                $http.get("https://api.themoviedb.org/3/movie/550?api_key=ab353a44dc07496c08cc90436fca0e27")
+                    .then(function(body){
+                        console.log(body)
+                        $scope.resp = body.data;
+                    })
+                    .catch(function(error){
+
+                    });
+            };
+            angular
+                .module("MonApplication",[])
+                .controller("UserController",UserController);
+        </script>
+	</body>
+</html>
