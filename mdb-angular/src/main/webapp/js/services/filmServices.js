@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module("base",[]);
+	var app = angular.module("filmServices",[]);
 
 	app.service('filmServices', function () { 
 		

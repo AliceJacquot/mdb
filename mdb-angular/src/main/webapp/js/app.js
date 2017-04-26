@@ -8,8 +8,8 @@
 
 	app.config(function($routeProvider) {
 		$routeProvider.when("/", {
-			templateUrl : "templates/menu.html",
-			controller : "rien"
+			templateUrl : "templates/search.html",
+			controller : "SearchController"
 		}).when("/search", {
 			templateUrl : "templates/search.html",
 			controller : "SearchController"
@@ -19,10 +19,16 @@
 		}).when("/filmex", {
 			templateUrl : "templates/detail.html",
 			controller : "DetailController"
-		})
-		.when("/film", {
+		}).when("/filmex/:id", {
 			templateUrl : "templates/detail.html",
 			controller : "DetailController"
+		})
+		.when("/film", {
+			templateUrl : "templates/detail.html/", 
+			controller : "DetailController"
+		}).when("/menu", {
+			templateUrl : "templates/menu.html",
+			controller : "rien"
 		})
 		.otherwise({
 			redirectTo : "/"

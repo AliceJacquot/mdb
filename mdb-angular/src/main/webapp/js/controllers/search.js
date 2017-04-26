@@ -58,8 +58,11 @@
 	   $scope.detail=function(film){
 		   console.log("film detail :"+film.title);
 		   $rootScope.film=film;
+		   return "#/filmex";
 	   }
 	   
+  
+   
 	   
 	});
 		

@@ -14,7 +14,7 @@
 				<img ng-alt="{{film.title}}" ng-src="{{srcImg(film.poster_path)}}"
 				height="45px"></img> <!-- srcImg(film.poster_path) -->
 				{{film.title}} <br>
-				<!-- <a ng-click="{{::detail(film)}}" href="#/film">details</a> -->
+				<a ng-href="{{'#/filmex/'+film.id}}" >details du film</a>
 
 			</li>
 

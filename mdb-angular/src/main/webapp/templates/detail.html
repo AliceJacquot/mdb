@@ -2,12 +2,11 @@
 	<h2>{{film.title}}</h2>
 	<div style="text-align: center;" ng-controller="SearchController">
 		<img ng-alt="{{film.title}}" ng-src="{{srcImg(film.poster_path)}}"></img>
-	</div> 
+	</div>  
 	<div>
-		<span ng-repeat="g in film.genres"><strong>{{g.name}}</strong></span>
+		<span ng-repeat="g in film.genres"><strong>{{g.name}} </strong></span>
 	</div>
 	<div>{{film.overview}}</div>
 	<a class="btn btn-info"
 				ng-click="saveBase()">Sauve lien</a>
-<!-- 	<button on-click="{{saveBase(film)}}">Sauvegarder en base</button> -->
 </div>

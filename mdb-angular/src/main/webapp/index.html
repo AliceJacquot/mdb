@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
-<title>Accueil</title>
+<title>Les films</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
 <script src="./js/angular.min.js"></script>
 <script src="./js/angular-route.min.js"></script>
@@ -15,8 +15,15 @@
 </head>
 <body ng-app="mdb">
 	<div ng-controller="rien">
+	<div>
 
-		<div ng-view>
+			<nav>
+			
+			<a href="#/menu" class="btn btn-primary" style="margin-left:5px; margin-top:5px;">Retour au menu</a> 
+			</nav>
+	</div>
+
+		<div ng-view style="margin-left:5px; margin-top:5px;">
 	
 		</div>
 	</div>
